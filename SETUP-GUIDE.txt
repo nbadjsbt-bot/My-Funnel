@@ -1,0 +1,38 @@
+SETUP-GUIDE.txt
+
+\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
+\u2551  INSTALL THESE PLUGINS BEFORE ACTIVATING     \u2551
+\u2551  THE THEME \u2014 IN THIS EXACT ORDER             \u2551
+\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d
+
+*Note: This funnel has been implemented as a modern React application for supreme speed, animations, and conversion optimization.*
+
+1. CONFIGURATION
+Open `src/config.ts` to edit your affiliate link, colors, images, and author bio. This replaces the traditional WordPress Customizer with a much faster, code-based config file that ensures peak performance.
+
+2. ADDING YOUR AFFILIATE LINK
+In `src/config.ts`, replace the `affiliateLink` value with your actual Digistore24 affiliate link (preferably cloaked with a Pretty Link).
+
+3. UPLOADING YOUR PHOTO
+Upload your author photo to any image host (or just place it in the `/public` folder of this project), and update the `author.photo` URL in `src/config.ts`.
+
+4. DEPLOYMENT (Vercel, Netlify, Cloudflare)
+Since this is a React SPA, you can deploy it for FREE on Netlify or Vercel. 
+- Run `npm run build`
+- Deploy the `dist` folder. 
+It takes 30 seconds and requires zero hosting fees.
+
+5. EMAILS
+The 7-part email sequence is provided in `EMAILS.txt`. Load these into your autoresponder (Mailchimp, ConvertKit, etc.). Ensure your opt-in form connects to your autoresponder list, and set the success redirect of your form to point to `/bridge`.
+
+6. PRE-LAUNCH CHECKLIST
+- [ ] Affiliate link added to config
+- [ ] Author photo updated
+- [ ] Email sequence loaded into autoresponder
+- [ ] Optin form connected to email list
+- [ ] Tested optin flow from start to finish
+- [ ] Tested bonus download links
+- [ ] Ready to launch!
+
+SCREENSHOT DESCRIPTION:
+A beautiful, modern, dark-themed React application with floating glassmorphism cards. The review page features an animated gradient background, a fully responsive grid of course modules, hover-lift effects on the pros/cons lists, and a striking golden gradient box showcasing the $405 bonus value. The design heavily utilizes deep indigos and emerald accents to build trust while maintaining a premium feel.
