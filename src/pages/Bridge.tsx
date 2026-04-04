@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { GlassCard, Button, AuthorInline, LegalFooter } from '../components/ui';
+import { GlassCard, Button, LegalFooter } from '../components/ui';
 import { config } from '../config';
 
 export default function Bridge() {
@@ -10,13 +10,11 @@ export default function Bridge() {
   useGSAP(() => {
     gsap.from(".step-progress", { opacity: 0, y: 20, duration: 0.8, stagger: 0.2 });
     gsap.to(".check-path", { strokeDashoffset: 0, duration: 0.8, ease: "power2.out", delay: 0.5 });
-    gsap.from(".author-card", { y: 40, opacity: 0, duration: 0.8, delay: 0.4 });
     gsap.from(".story-block", { y: 30, opacity: 0, duration: 0.6, stagger: 0.15, delay: 0.6 });
   });
 
   return (
     <div className="min-h-screen" ref={containerRef}>
-
       {/* CONFIRMATION HEADER */}
       <div className="max-w-3xl mx-auto text-center pt-16 pb-12 px-4">
 
@@ -75,12 +73,14 @@ export default function Bridge() {
         <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">
           🎉 You're Officially In
         </div>
+
         <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
           You're In — Your Blueprint Is{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
             Arriving in Your Inbox Right Now
           </span>
         </h1>
+
         <p className="text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto">
           Check your email in the next 60 seconds. If it's not there, check your spam folder and move it to your primary inbox so you don't miss what's coming next.
         </p>
@@ -92,19 +92,15 @@ export default function Bridge() {
             { icon: "🗂️", text: "Check spam folder" },
             { icon: "⭐", text: "Mark as important" }
           ].map((tip, i) => (
-            <div key={i} className="flex items-center gap-2 bg-slate-800/50 border border-slate-700/50 rounded-full px-4 py-2 text-sm text-slate-300">
+            <div
+              key={i}
+              className="flex items-center gap-2 bg-slate-800/50 border border-slate-700/50 rounded-full px-4 py-2 text-sm text-slate-300"
+            >
               <span>{tip.icon}</span>
               <span>{tip.text}</span>
             </div>
           ))}
         </div>
-      </div>
-
-      {/* AUTHOR CARD */}
-      <div className="max-w-2xl mx-auto px-4 mb-16">
-        <GlassCard className="author-card !bg-indigo-900/20 border-indigo-500/30 hover:border-indigo-500/50 transition-all duration-300">
-          <AuthorInline author={config.author} />
-        </GlassCard>
       </div>
 
       {/* STORY SECTION */}
@@ -119,7 +115,8 @@ export default function Bridge() {
 
           <div className="story-block">
             <p className="text-slate-300 text-lg leading-relaxed">
-              My name is <strong className="text-white">{config.author.name}</strong>. I review software and digital business systems at digitaltoolkt.com.ng. I have a rule I have never broken: I only recommend something I would personally tell a close friend to spend their hard-earned money on.
+              I review software and digital business systems at digitaltoolkt.com.ng. I have a rule I have never broken:
+              I only recommend something I would personally tell a close friend to spend their hard-earned money on.
             </p>
           </div>
 
@@ -131,13 +128,15 @@ export default function Bridge() {
 
           <div className="story-block bg-slate-800/30 border border-slate-700/50 rounded-2xl p-6">
             <p className="text-slate-300 text-lg leading-relaxed">
-              Imagine staring at a laptop at 11 PM. Fourteen months of trying. Three courses bought. Hundreds of YouTube videos watched. Zero to show for it. Not a lack of motivation. Not a lack of intelligence. Something more fundamental than that.
+              Imagine staring at a laptop at 11 PM. Fourteen months of trying. Three courses bought. Hundreds of YouTube videos watched.
+              Zero to show for it. Not a lack of motivation. Not a lack of intelligence. Something more fundamental than that.
             </p>
           </div>
 
           <div className="story-block">
             <p className="text-slate-300 text-lg leading-relaxed">
-              The problem is the volume requirement. Affiliate marketing at real scale requires an enormous, continuous output of content — emails, pages, articles, ads, follow-up sequences. One person writing everything manually cannot produce enough volume to compete. They burn out at exactly the point where momentum should be building.
+              The problem is the volume requirement. Affiliate marketing at real scale requires an enormous, continuous output of content — emails, pages, articles, ads, follow-up sequences.
+              One person writing everything manually cannot produce enough volume to compete. They burn out at exactly the point where momentum should be building.
             </p>
             <p className="text-indigo-300 font-semibold text-lg leading-relaxed mt-4">
               That is the trap. And it is the real reason most people quit before they ever see results.
@@ -146,8 +145,11 @@ export default function Bridge() {
 
           <div className="story-block bg-indigo-900/20 border border-indigo-500/20 rounded-2xl p-6">
             <p className="text-slate-300 text-lg leading-relaxed">
-              While reviewing AI tools for digitaltoolkt.com.ng, the editorial team found a system that flips this equation permanently. Instead of AI being a helper that assists occasionally, this system makes AI the primary content engine. The human becomes the strategic director.
+              While reviewing AI tools for digitaltoolkt.com.ng, the editorial team found a system that flips this equation permanently.
+              Instead of AI being a helper that assists occasionally, this system makes AI the primary content engine.
+              The human becomes the strategic director.
             </p>
+
             <div className="grid grid-cols-2 gap-3 mt-4">
               {[
                 { icon: "✉️", text: "AI writes the emails" },
@@ -188,13 +190,16 @@ export default function Bridge() {
 
           <div className="story-block">
             <p className="text-slate-300 text-lg leading-relaxed">
-              And the income that never arrived when everything was done manually starts showing up when the right volume of content is finally in market. This is not magic. It is leverage. More content, better structured, deployed faster — produces more results. AI makes that math possible for a single person without a team, without a budget, and without burning out.
+              And the income that never arrived when everything was done manually starts showing up when the right volume of content is finally in market.
+              This is not magic. It is leverage. More content, better structured, deployed faster — produces more results.
+              AI makes that math possible for a single person without a team, without a budget, and without burning out.
             </p>
           </div>
 
           <div className="story-block bg-gradient-to-r from-indigo-900/30 to-purple-900/30 border border-indigo-500/30 rounded-2xl p-6">
             <p className="text-white font-bold text-xl leading-relaxed">
-              I put together a complete review of the AI affiliate system behind all of this. Every module. Every cost. Every honest pro and every genuine con. Read it below before you decide anything — I want you to have the full picture.
+              I put together a complete review of the AI affiliate system behind all of this. Every module. Every cost.
+              Every honest pro and every genuine con. Read it below before you decide anything — I want you to have the full picture.
             </p>
           </div>
 
@@ -248,13 +253,13 @@ export default function Bridge() {
           </div>
 
           <div className="space-y-4 text-slate-300 text-base leading-relaxed">
-            <p>
-              Open any AI writing tool right now — ChatGPT, Claude, or Gemini all work.
-            </p>
+            <p>Open any AI writing tool right now — ChatGPT, Claude, or Gemini all work.</p>
             <p>Paste this prompt and fill in the brackets:</p>
 
             <div className="bg-slate-900/80 p-5 rounded-xl border border-indigo-500/20 text-emerald-400 font-mono text-sm leading-relaxed">
-              "Write a 220-word affiliate marketing email promoting [YOUR PRODUCT NAME] to [YOUR TARGET AUDIENCE]. Open with the single most painful daily problem this audience experiences. In the second paragraph, show how this product solves that exact problem. Close with one clear call to action. Tone: direct, warm, conversational. No hype language. No exaggerated claims."
+              "Write a 220-word affiliate marketing email promoting [YOUR PRODUCT NAME] to [YOUR TARGET AUDIENCE]. Open with the single most painful daily problem this audience experiences.
+              In the second paragraph, show how this product solves that exact problem. Close with one clear call to action. Tone: direct, warm, conversational.
+              No hype language. No exaggerated claims."
             </div>
 
             <p>Fill in your product and audience. Hit generate. Read what comes back.</p>
@@ -266,7 +271,8 @@ export default function Bridge() {
             </div>
 
             <p>
-              Now imagine running that prompt for every email in a 5-part sequence. Every bridge page. Every review article. Every ad you need to write. All in a single afternoon.
+              Now imagine running that prompt for every email in a 5-part sequence. Every bridge page. Every review article.
+              Every ad you need to write. All in a single afternoon.
             </p>
 
             <p className="text-white font-semibold">
